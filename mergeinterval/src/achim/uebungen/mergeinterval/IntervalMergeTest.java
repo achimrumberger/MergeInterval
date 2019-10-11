@@ -28,7 +28,6 @@ public class IntervalMergeTest {
 
 		ArrayList<Interval> inputInterVal = new ArrayList<>();
 
-
 		inputInterVal.add(new Interval(0, 30));
 		inputInterVal.add(new Interval(2, 19));
 		inputInterVal.add(new Interval(14, 23));
@@ -40,17 +39,27 @@ public class IntervalMergeTest {
 	}
 	
 	@Test
+	public void testForCommonBoundaries() throws MalformedIntervallException {
+
+		ArrayList<Interval> inputInterVal = new ArrayList<>();
+
+		inputInterVal.add(new Interval(25, 30));
+		inputInterVal.add(new Interval(2, 19));
+		inputInterVal.add(new Interval(14, 19));
+		inputInterVal.add(new Interval(4, 8));
+
+		ArrayList<Interval> outputInterVal = IntervalMerge.mergeIntervallList(inputInterVal);
+		assertEquals(2, outputInterVal.size());
+
+	}
+	
+	@Test
 	public void testForEmptyList() throws MalformedIntervallException {
 
 		ArrayList<Interval> inputInterVal = new ArrayList<>();
 
 		ArrayList<Interval> outputInterVal = IntervalMerge.mergeIntervallList(inputInterVal);
 		assertEquals(0, outputInterVal.size());
-
-		for(Interval i : outputInterVal)
-		{
-			System.out.println(i.getStart() + " " + i.getEnd());
-		}
 
 	}
 	
@@ -62,7 +71,6 @@ public class IntervalMergeTest {
 		inputInterVal.add(new Interval(2, 19));
 		inputInterVal.add(new Interval(14, 23));
 		inputInterVal.add(new Interval(4, 8));
-
 
 		ArrayList<Interval> outputInterVal = IntervalMerge.mergeIntervallList(inputInterVal);
 		
