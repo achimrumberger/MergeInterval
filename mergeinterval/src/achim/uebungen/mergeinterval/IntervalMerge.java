@@ -4,10 +4,6 @@ import java.util.*;
 
 public class IntervalMerge
 {   
-	/*
-	 *  Input: [25,30] [2,19] [14, 23] [4,8]  Output: [2,23] [25,30]
-        https://www.youtube.com/watch?v=WdgAKCnWnwA
-	 */
 
     public static ArrayList<Interval> mergeIntervallList(final List<Interval>  intervalsList) throws MalformedIntervallException {
     	
